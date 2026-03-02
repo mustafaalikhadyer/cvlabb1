@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mitt Digitala CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">MustafaAlikhadyer.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html">Om Mig</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Min Portfolio</h1>
+        <div class="portfolio-grid">
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Väderapp ikon">
+                <h3>Väderapp</h3>
+                <p>En app som visar vädret via API.</p>
+                <button class="modal-btn" data-target="modal1">Läs mer</button>
+            </article>
+
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="To-do list">
+                <h3>Att-göra-lista</h3>
+                <p>Skapa och spara dina uppgifter.</p>
+                <button class="modal-btn" data-target="modal2">Läs mer</button>
+            </article>
+
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Designskiss">
+                <h3>Design mockup</h3>
+                <p>En design gjord i Figma.</p>
+                <button class="modal-btn" data-target="modal3">Läs mer</button>
+            </article>
+        </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Väderapp</h2>
+                <p>Här beskriver jag projektet djupare. Jag använde fetch-API för att hämta väderdata.</p>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Att-göra-lista</h2>
+                <p>En klassisk To-Do list byggd med Vanilla JavaScript och LocalStorage.</p>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Design Mockup</h2>
+                <p>Detta är en prototyp för en e-handelssajt.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mustafa Alikhadyer</p>
+        <span id="mushroom-trigger" title="Klicka på mig!">🍄</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
