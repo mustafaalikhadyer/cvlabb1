@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
-        // Kontrollera om länkens href finns i nuvarande URL
         if(currentPath.includes(link.getAttribute('href'))) {
             link.classList.add('active');
         }
-        // Specialfall för startsidan (om path är tom eller bara /)
         if((currentPath === '/' || currentPath.endsWith('/')) && link.getAttribute('href') === 'index.html') {
             link.classList.add('active');
         }
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBtns = document.querySelectorAll('.modal-btn');
     const closeBtns = document.querySelectorAll('.close-btn');
 
-    // Öppna modal vid knapptryck
+    // Öppna Portfolio-modaler
     modalBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const modalId = btn.getAttribute('data-target');
@@ -28,9 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Stäng modal vid klick på krysset
+    // Stäng ALLA modaler vid klick på krysset (X)
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // Hitta modalen som knappen ligger i och stäng den
             btn.closest('.modal').style.display = 'none';
         });
     });
@@ -42,37 +41,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- PÅSKÄGG 1: Svampen ---
+    // --- PÅSKÄGG 1: Svampen (Bakgrundsbyte + Modal) ---
     const mushroom = document.getElementById('mushroom-trigger');
+    
     if(mushroom) {
         mushroom.addEventListener('click', () => {
+            // 1. Byt bakgrund
             document.body.style.background = "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)";
-            alert("🍄 Super Mario Mode Activated! (Bakgrunden ändrades)");
+            
+            // 2. Visa modal istället för alert
+            const mushroomModal = document.getElementById('modal-mushroom');
+            if (mushroomModal) {
+                mushroomModal.style.display = 'block';
+            }
         });
     }
 
-    // --- PÅSKÄGG 2: Kod 1337 ---
+    // --- PÅSKÄGG 2: Kod 1337 (Bara Modal) ---
     let keySequence = '';
     const secretCode = '1337';
 
     document.addEventListener('keydown', (e) => {
         keySequence += e.key;
         
-        // Håll strängen kort
+        // Håll strängen kort för att spara minne
         if (keySequence.length > secretCode.length) {
             keySequence = keySequence.slice(-secretCode.length);
         }
 
+        // Om koden matchar
         if (keySequence === secretCode) {
-            const eggModal = document.getElementById('easter-egg-modal');
-            // Om vi är på startsidan finns modalen
-            if (eggModal) {
-                eggModal.style.display = 'block';
-            } else {
-                // Om vi är på en annan sida, kör en alert istället
-                alert("👾 ELITE! Du hittade det hemliga påskägget!");
+            const eliteModal = document.getElementById('modal-1337');
+            
+            // Visa modal istället för alert
+            if (eliteModal) {
+                eliteModal.style.display = 'block';
             }
-            // Nollställ sekvensen
+            
+            // Nollställ sekvensen så man kan göra det igen
             keySequence = '';
         }
     });
