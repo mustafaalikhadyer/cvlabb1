@@ -1,0 +1,27 @@
+{
+  "experience": [
+    {
+      "id": 1,
+      "role": "Senior Säljare",
+      "company": "Företaget AB",
+      "years": "2020 - 2023",
+      "description": "Ansvarade för nyckelkunder och daglig försäljning."
+    },
+    {
+      "id": 2,
+      "role": "Butiksmedarbetare",
+      "company": "Butiken",
+      "years": "2018 - 2020",
+      "description": "Kassaarbete, uppackning av varor och kundservice."
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "program": "Front-End Developer",
+      "school": "Yrkeshögskolan",
+      "years": "2023 - Pågående",
+      "description": "Kurser inom HTML, CSS, JavaScript, React och agila metoder."
+    }
+  ]
+}
